@@ -12,5 +12,6 @@ LOCAL_JAVA_LIBRARIES :=	android.hidl.manager-V1.0-java
 LOCAL_STATIC_JAVA_LIBRARIES := vendor.qti.hardware.radio.am-V1.0-java
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
+LOCAL_PRIVATE_PLATFORM_APIS := true
 
 include $(BUILD_PACKAGE)
