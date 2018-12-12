@@ -13,5 +13,6 @@ LOCAL_STATIC_JAVA_LIBRARIES := vendor.qti.hardware.radio.am-V1.0-java
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 LOCAL_PRIVATE_PLATFORM_APIS := true
+LOCAL_PRIVILEGED_MODULE := true
 
 include $(BUILD_PACKAGE)
