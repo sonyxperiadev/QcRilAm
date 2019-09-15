@@ -12,7 +12,10 @@ LOCAL_JAVA_LIBRARIES :=	android.hidl.manager-V1.0-java
 LOCAL_STATIC_JAVA_LIBRARIES := vendor.qti.hardware.radio.am-V1.0-java
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
-LOCAL_PRIVATE_PLATFORM_APIS := true
 LOCAL_PRIVILEGED_MODULE := true
+
+ifneq ($(shell echo "$(PLATFORM_SDK_VERSION)" ),$(shell echo "$(PRODUCT_SHIPPING_API_LEVEL)" ))
+    LOCAL_PRIVATE_PLATFORM_APIS := true
+endif
 
 include $(BUILD_PACKAGE)
