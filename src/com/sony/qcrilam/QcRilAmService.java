@@ -12,11 +12,6 @@ import vendor.qti.hardware.radio.am.V1_0.IQcRilAudioCallback;
 
 public class QcRilAmService extends Service {
     private static final String TAG = "QcRilAm-Service";
-    private static boolean isRunning = false;
-
-    public static boolean isServiceRunning() {
-        return isRunning;
-    }
 
     private void addCallbackForSimSlot(final int simSlotNo, final AudioManager audioManager) {
         try {
@@ -50,7 +45,6 @@ public class QcRilAmService extends Service {
 
     @Override
     public void onCreate() {
-        isRunning = true;
         int simCount = SubscriptionManager.from(this).getActiveSubscriptionInfoCountMax();
         Log.i(TAG, "Device has " + simCount + " sim slots");
         final AudioManager audioManager = getSystemService(AudioManager.class);

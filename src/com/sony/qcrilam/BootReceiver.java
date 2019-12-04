@@ -14,11 +14,7 @@ public class BootReceiver extends BroadcastReceiver {
             Log.w(TAG, "BOOT_COMPLETE NULL intent");
             return;
         }
-        if (QcRilAmService.isServiceRunning()) {
-            Log.d(TAG, "Service is already running");
-        } else {
-            intent.setClass(context, QcRilAmService.class);
-            context.startService(new Intent(context, QcRilAmService.class));
-        }
+
+        context.startService(new Intent(context, QcRilAmService.class));
     }
 }
