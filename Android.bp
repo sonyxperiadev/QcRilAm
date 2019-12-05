@@ -17,8 +17,5 @@ android_app {
 
     static_libs: ["vendor.qti.hardware.radio.am-V1.0-java"],
 
-    optimize: {
-        proguard_flags_files: ["proguard.flags"],
-    },
     sdk_version: "system_current",
 }
