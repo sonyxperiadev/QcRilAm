@@ -1,7 +1,0 @@
--keep class com.sony.qcrilam.BootReceiver {
-      *;
-}
-
--keep class com.sony.qcrilam.QcrRilAmService {
-      *;
-}
