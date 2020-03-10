@@ -13,7 +13,7 @@ android_app {
 
     proprietary: true,
 
-    srcs: ["src/**/*.java"],
+    srcs: ["src/**/*.kt"],
 
     static_libs: ["vendor.qti.hardware.radio.am-V1.0-java"],
 
