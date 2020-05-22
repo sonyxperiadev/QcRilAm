@@ -30,9 +30,9 @@ import android.util.Log
 import vendor.qti.hardware.radio.am.V1_0.IQcRilAudio
 import vendor.qti.hardware.radio.am.V1_0.IQcRilAudioCallback
 
-class QcRilAmService : Service() {
-    private var TAG = "QcRilAm-Service"
+private const val TAG = "QcRilAm-Service"
 
+class QcRilAmService : Service() {
     private fun addCallbackForSimSlot(simSlotNo: Int, audioManager: AudioManager) {
         try {
             val qcRilAudio = IQcRilAudio.getService("slot$simSlotNo")
@@ -58,9 +58,7 @@ class QcRilAmService : Service() {
         }
     }
 
-    override fun onBind(intent: Intent?): IBinder? {
-        return null
-    }
+    override fun onBind(intent: Intent?) = null
 
     override fun onCreate() {
         val simCount = getSystemService(SubscriptionManager::class.java).getActiveSubscriptionInfoCountMax()
