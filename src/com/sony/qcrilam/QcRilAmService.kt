@@ -35,7 +35,7 @@ private const val TAG = "QcRilAm-Service"
 class QcRilAmService : Service() {
     private fun addCallbackForSimSlot(simSlotNo: Int, audioManager: AudioManager) {
         try {
-            val qcRilAudio = IQcRilAudio.getService("slot$simSlotNo")
+            val qcRilAudio = IQcRilAudio.getService("slot$simSlotNo", true /*retry*/)
             if (qcRilAudio == null) {
                 Log.e(TAG, "Could not get service instance for slot$simSlotNo, failing")
             } else {
